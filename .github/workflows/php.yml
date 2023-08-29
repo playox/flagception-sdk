@@ -14,8 +14,6 @@ jobs:
         runs-on: ubuntu-latest
         steps:
             - uses: actions/checkout@v2
-            - uses: timkrase/phpunit-coverage-badge@v1.2.1
-
             - uses: shivammathur/setup-php@v2
               with:
                 php-version: ${{ matrix.php }}
