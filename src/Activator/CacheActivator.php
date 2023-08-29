@@ -17,7 +17,7 @@ class CacheActivator implements FeatureActivatorInterface
     /**
      * Cache key
      */
-    const CACHE_KEY = 'flagception';
+    public const CACHE_KEY = 'flagception';
 
     /**
      * The origin activator

@@ -15,17 +15,17 @@ class ChainActivator implements FeatureActivatorInterface
     /**
      * At least one activator must return true to activating the feature (default)
      */
-    const STRATEGY_FIRST_MATCH = 1;
+    public const STRATEGY_FIRST_MATCH = 1;
 
     /**
      * All activators must return true to activating the feature
      */
-    const STRATEGY_ALL_MATCH = 2;
+    public const STRATEGY_ALL_MATCH = 2;
 
     /**
      * The reserved name for strategy override via context
      */
-    const CONTEXT_STRATEGY_NAME = 'chain_strategy';
+    public const CONTEXT_STRATEGY_NAME = 'chain_strategy';
 
     /**
      * Ordered array of feature activators

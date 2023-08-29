@@ -16,12 +16,12 @@ class CookieActivator implements FeatureActivatorInterface
     /**
      * Activator should act as whitelist
      */
-    const WHITELIST = 'whitelist';
+    public const WHITELIST = 'whitelist';
 
     /**
      * Activator should act as blacklist
      */
-    const BLACKLIST = 'blacklist';
+    public const BLACKLIST = 'blacklist';
 
     /**
      * Features collection
