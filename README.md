@@ -4,7 +4,7 @@ Only a few lines of configuration necessary - and still very flexible and expand
 
 [![Latest Stable Version](https://poser.pugx.org/flagception/flagception/v/stable)](https://packagist.org/packages/flagception/flagception)
 [![Coverage Status](https://coveralls.io/repos/github/bestit/flagception-sdk/badge.svg?branch=master)](https://coveralls.io/github/bestit/flagception-sdk?branch=master)
-[![Build Status](https://travis-ci.org/bestit/flagception-sdk.svg?branch=master)](https://travis-ci.org/bestit/flagception-sdk)
+[![Build Status](https://github.com/playox/flagception-sdk/actions/workflows/php.yml/badge.svg)](https://github.com/playox/flagception-sdk/actions)
 [![Total Downloads](https://poser.pugx.org/flagception/flagception/downloads)](https://packagist.org/packages/flagception/flagception)
 [![License](https://poser.pugx.org/flagception/flagception/license)](https://packagist.org/packages/flagception/flagception)
 
