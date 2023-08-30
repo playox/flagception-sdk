@@ -10,7 +10,26 @@ jobs:
     build:
         strategy:
             matrix:
-                php: ['7.2','7.3','7.4','8.0', '8.1', '8.2']
+                php: ['7.2','7.3','7.4','8.0', '8.1']
+        runs-on: ubuntu-latest
+        steps:
+            - uses: actions/checkout@v3
+            - uses: shivammathur/setup-php@v2
+              with:
+                php-version: ${{ matrix.php }}
+                tools: composer
+                coverage: false
+            - name: Install Dependencies
+              run: composer update --prefer-dist --no-interaction
+            - name: run tests
+              run: composer test
+            - name: run analyze
+              run: composer analyze
+
+    coverage:
+        strategy:
+            matrix:
+                php: ['8.2']
         runs-on: ubuntu-latest
         steps:
             - uses: actions/checkout@v3

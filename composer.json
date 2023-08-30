@@ -34,7 +34,7 @@
     "flagception/database-activator": "Fetch feature flags from database."
   },
   "scripts": {
-    "phpunit": "XDEBUG_MODE=coverage phpunit --coverage-text -c build/phpunit.xml",
+    "phpunit": "phpunit --coverage-text -c build/phpunit.xml",
     "checkstyle": "phpcs --standard=./build/phpcs.xml ./src",
     "analyze": "@checkstyle",
     "test": "@phpunit"
