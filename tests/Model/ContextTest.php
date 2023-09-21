@@ -25,6 +25,20 @@ class ContextTest extends TestCase
         static::assertEquals([], $context->all());
     }
 
+
+    /**
+     * Test passing storage to construct
+     *
+     * @return void
+     */
+    public function testConstructWithStorage()
+    {
+        $storage = ['foo' => 'bar', 'role' => 'ROLE_ADMIN'];
+
+        $context = new Context($storage);
+        static::assertEquals($storage, $context->all());
+    }
+
     /**
      * Test add context value
      *

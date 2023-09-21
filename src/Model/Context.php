@@ -16,10 +16,22 @@ class Context implements Serializable
     /**
      * Storage for all context values
      *
-     * @var array
+     * @var array<string, mixed>
      */
     private $storage = [];
 
+    /**
+     * Context constructor
+     *
+     * @param array<string, mixed> $storage
+     */
+    public function __construct(array $storage = [])
+    {
+        foreach ($storage as $name => $value) {
+            $this->add($name, $value);
+        }    
+    }
+    
     /**
      * Add a context value. The key must be unique and cannot be replaced
      *
@@ -67,7 +79,7 @@ class Context implements Serializable
     /**
      * Get all context values (key => value pairs)
      *
-     * @return array
+     * @return array<string, mixed>
      */
     public function all()
     {
