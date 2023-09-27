@@ -29,9 +29,9 @@ class Context implements Serializable
     {
         foreach ($storage as $name => $value) {
             $this->add($name, $value);
-        }    
+        }
     }
-    
+
     /**
      * Add a context value. The key must be unique and cannot be replaced
      *
