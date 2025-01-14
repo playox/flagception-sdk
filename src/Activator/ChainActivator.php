@@ -46,7 +46,7 @@ class ChainActivator implements FeatureActivatorInterface
      *
      * @param int $strategy
      */
-    public function __construct($strategy = self::STRATEGY_FIRST_MATCH)
+    public function __construct(int $strategy = self::STRATEGY_FIRST_MATCH)
     {
         $this->strategy = $strategy;
     }
@@ -68,7 +68,7 @@ class ChainActivator implements FeatureActivatorInterface
      *
      * @return FeatureActivatorInterface[]
      */
-    public function getActivators()
+    public function getActivators(): array
     {
         return $this->bag;
     }
@@ -76,7 +76,7 @@ class ChainActivator implements FeatureActivatorInterface
     /**
      * {@inheritdoc}
      */
-    public function getName()
+    public function getName(): string
     {
         return 'chain';
     }
@@ -84,7 +84,7 @@ class ChainActivator implements FeatureActivatorInterface
     /**
      * {@inheritdoc}
      */
-    public function isActive($name, Context $context)
+    public function isActive(string $name, ?Context $context): bool
     {
         $strategy = $context->get(self::CONTEXT_STRATEGY_NAME, $this->strategy);
 

@@ -34,7 +34,7 @@ class FeatureManager implements FeatureManagerInterface
      * @param FeatureActivatorInterface $activator
      * @param ContextDecoratorInterface|null $decorator
      */
-    public function __construct(FeatureActivatorInterface $activator, ContextDecoratorInterface $decorator = null)
+    public function __construct(FeatureActivatorInterface $activator, ?ContextDecoratorInterface $decorator = null)
     {
         $this->activator = $activator;
         $this->decorator = $decorator;
@@ -43,7 +43,7 @@ class FeatureManager implements FeatureManagerInterface
     /**
      * {@inheritdoc}
      */
-    public function isActive($name, Context $context = null)
+    public function isActive(string $name, ?Context $context = null): bool
     {
         if ($context === null) {
             $context = new Context();

@@ -67,7 +67,7 @@ class CacheActivator implements FeatureActivatorInterface
      *
      * @return FeatureActivatorInterface
      */
-    public function getActivator()
+    public function getActivator(): FeatureActivatorInterface
     {
         return $this->activator;
     }
@@ -75,7 +75,7 @@ class CacheActivator implements FeatureActivatorInterface
     /**
      * {@inheritdoc}
      */
-    public function getName()
+    public function getName(): string
     {
         return $this->activator->getName();
     }
@@ -83,7 +83,7 @@ class CacheActivator implements FeatureActivatorInterface
     /**
      * {@inheritdoc}
      */
-    public function isActive($name, Context $context)
+    public function isActive(string $name, ?Context $context): bool
     {
         $hash = static::CACHE_KEY . '#' . $this->getName() . '#' . md5($name . '-' . $context->serialize());
 

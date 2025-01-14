@@ -42,7 +42,7 @@ class ConstraintActivator implements FeatureActivatorInterface
     /**
      * {@inheritdoc}
      */
-    public function getName()
+    public function getName(): string
     {
         return 'constraint';
     }
@@ -50,7 +50,7 @@ class ConstraintActivator implements FeatureActivatorInterface
     /**
      * {@inheritdoc}
      */
-    public function isActive($name, Context $context)
+    public function isActive(string $name, ?Context $context): bool
     {
         if (!array_key_exists($name, $this->features)) {
             return false;
