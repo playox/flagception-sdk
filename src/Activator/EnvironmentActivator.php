@@ -32,7 +32,7 @@ class EnvironmentActivator implements FeatureActivatorInterface
      * @param array $variables
      * @param bool $forceRequest
      */
-    public function __construct(array $variables = [], $forceRequest = false)
+    public function __construct(array $variables = [], bool $forceRequest = false)
     {
         $this->variables = $variables;
         $this->forceRequest = $forceRequest;
@@ -41,7 +41,7 @@ class EnvironmentActivator implements FeatureActivatorInterface
     /**
      * {@inheritdoc}
      */
-    public function getName()
+    public function getName(): string
     {
         return 'environment';
     }
@@ -49,7 +49,7 @@ class EnvironmentActivator implements FeatureActivatorInterface
     /**
      * {@inheritdoc}
      */
-    public function isActive($name, Context $context)
+    public function isActive(string $name, ?Context $context): bool
     {
         if ($this->forceRequest === false && !array_key_exists($name, $this->variables)) {
             return false;
@@ -69,7 +69,7 @@ class EnvironmentActivator implements FeatureActivatorInterface
      *
      * @return string|null
      */
-    private function getEnv($name)
+    private function getEnv($name): ?string
     {
         return filter_var(
             array_key_exists($name, $_ENV) ? $_ENV[$name] : getenv($name),

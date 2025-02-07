@@ -20,5 +20,5 @@ interface FeatureManagerInterface
      *
      * @return bool
      */
-    public function isActive($name, Context $context = null);
+    public function isActive(string $name, ?Context $context = null): bool;
 }

@@ -17,16 +17,16 @@ interface FeatureActivatorInterface
      *
      * @return string
      */
-    public function getName();
+    public function getName(): string;
 
     /**
      * Check if the given feature name is active
      * Optional the context object can contain further options to check
      *
      * @param string $name
-     * @param Context $context
+     * @param Context|null $context
      *
      * @return bool
      */
-    public function isActive($name, Context $context);
+    public function isActive(string $name, ?Context $context): bool;
 }

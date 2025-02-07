@@ -24,6 +24,7 @@ class Context implements Serializable
      * Context constructor
      *
      * @param array<string, mixed> $storage
+     * @throws AlreadyDefinedException
      */
     public function __construct(array $storage = [])
     {
@@ -41,7 +42,7 @@ class Context implements Serializable
      * @return void
      * @throws AlreadyDefinedException
      */
-    public function add($name, $value)
+    public function add(string $name, $value)
     {
         if (array_key_exists($name, $this->storage)) {
             throw new AlreadyDefinedException(sprintf('Context value with key `%s` already defined', $name));
@@ -58,7 +59,7 @@ class Context implements Serializable
      *
      * @return void
      */
-    public function replace($name, $value)
+    public function replace(string $name, $value)
     {
         $this->storage[$name] = $value;
     }
@@ -71,7 +72,7 @@ class Context implements Serializable
      *
      * @return mixed
      */
-    public function get($name, $default = null)
+    public function get(string $name, $default = null)
     {
         return array_key_exists($name, $this->storage) ? $this->storage[$name] : $default;
     }
@@ -81,7 +82,7 @@ class Context implements Serializable
      *
      * @return array<string, mixed>
      */
-    public function all()
+    public function all(): array
     {
         return $this->storage;
     }
@@ -93,7 +94,7 @@ class Context implements Serializable
      *
      * @return bool
      */
-    public function has($name)
+    public function has(string $name): bool
     {
         return array_key_exists($name, $this->storage);
     }

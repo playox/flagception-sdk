@@ -71,10 +71,10 @@ class CookieActivator implements FeatureActivatorInterface
      */
     public function __construct(
         array $features,
-        $name = 'flagception',
-        $separator = ',',
-        $mode = self::WHITELIST,
-        callable $extractor = null
+        string $name = 'flagception',
+        string $separator = ',',
+        string $mode = self::WHITELIST,
+        ?callable $extractor = null
     ) {
         if (!in_array($mode, [self::BLACKLIST, self::WHITELIST], true)) {
             throw new InvalidArgumentException(
@@ -103,7 +103,7 @@ class CookieActivator implements FeatureActivatorInterface
     /**
      * {@inheritdoc}
      */
-    public function getName()
+    public function getName(): string
     {
         return 'cookie';
     }
@@ -111,7 +111,7 @@ class CookieActivator implements FeatureActivatorInterface
     /**
      * {@inheritdoc}
      */
-    public function isActive($name, Context $context)
+    public function isActive(string $name, ?Context $context): bool
     {
         // Disable features which aren't whitelisted
         if ($this->mode === self::WHITELIST && !in_array($name, $this->features, true)) {
