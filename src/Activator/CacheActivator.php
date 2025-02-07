@@ -83,7 +83,7 @@ class CacheActivator implements FeatureActivatorInterface
     /**
      * {@inheritdoc}
      */
-    public function isActive(string $name, ?Context $context): bool
+    public function isActive(string $name, Context $context): bool
     {
         $hash = static::CACHE_KEY . '#' . $this->getName() . '#' . md5($name . '-' . $context->serialize());
 

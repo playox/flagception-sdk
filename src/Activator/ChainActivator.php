@@ -84,7 +84,7 @@ class ChainActivator implements FeatureActivatorInterface
     /**
      * {@inheritdoc}
      */
-    public function isActive(string $name, ?Context $context): bool
+    public function isActive(string $name, Context $context): bool
     {
         $strategy = $context->get(self::CONTEXT_STRATEGY_NAME, $this->strategy);
 

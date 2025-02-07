@@ -49,7 +49,7 @@ class EnvironmentActivator implements FeatureActivatorInterface
     /**
      * {@inheritdoc}
      */
-    public function isActive(string $name, ?Context $context): bool
+    public function isActive(string $name, Context $context): bool
     {
         if ($this->forceRequest === false && !array_key_exists($name, $this->variables)) {
             return false;

@@ -24,6 +24,7 @@ class Context implements Serializable
      * Context constructor
      *
      * @param array<string, mixed> $storage
+     *
      * @throws AlreadyDefinedException
      */
     public function __construct(array $storage = [])

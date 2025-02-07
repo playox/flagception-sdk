@@ -40,7 +40,7 @@ class ArrayActivator implements FeatureActivatorInterface
     /**
      * {@inheritdoc}
      */
-    public function isActive(string $name, ?Context $context): bool
+    public function isActive(string $name, Context $context): bool
     {
         if (array_key_exists($name, $this->features)) {
             return filter_var($this->features[$name], FILTER_VALIDATE_BOOLEAN);

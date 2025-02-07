@@ -111,7 +111,7 @@ class CookieActivator implements FeatureActivatorInterface
     /**
      * {@inheritdoc}
      */
-    public function isActive(string $name, ?Context $context): bool
+    public function isActive(string $name, Context $context): bool
     {
         // Disable features which aren't whitelisted
         if ($this->mode === self::WHITELIST && !in_array($name, $this->features, true)) {
