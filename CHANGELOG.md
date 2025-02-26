@@ -1,3 +1,6 @@
+## [2.0.0]
+- Remove deprecations and add missing types @calderholding-r
+
 ## [1.7.0]
 ### Added
 - Add support for PHP8 @Schleuse
